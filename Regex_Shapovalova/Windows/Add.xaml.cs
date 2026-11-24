@@ -56,10 +56,40 @@ namespace Regex_Shapovalova.Windows
                 MessageBox.Show("Неправильно указано отчество пользователя");
                 return;
             }
+            if (string.IsNullOrEmpty(Issued.Text) || !Classes.Common.CheckRegex.Match("^[а-яА-я]*$", Issued.Text))
+            {
+                MessageBox.Show("Неправильно указан орган выдачи пасспорта");
+                return;
+            }
+            if (string.IsNullOrEmpty(DateOfIssued.Text) || !Classes.Common.CheckRegex.Match("^\d{2}.\d{2}.\d{4}", DateOfIssued.Text))
+            {
+                MessageBox.Show("Неправильно указана дата выдачи паспорта");
+                return;
+            }
+            if (string.IsNullOrEmpty(DepartmentCode.Text) || !Classes.Common.CheckRegex.Match("^\d{2}.\d{2}.\d{4}", DepartmentCode.Text))
+            {
+                MessageBox.Show("Неправильно указан код подразделения паспорта");
+                return;
+            }
+            if (string.IsNullOrEmpty(SeriesAndNumber.Text) || !Classes.Common.CheckRegex.Match("^\d{2}.\d{2}.\d{4}", SeriesAndNumber.Text))
+            {
+                MessageBox.Show("Неправильно указаны серия и номер паспорта");
+                return;
+            }
+            if (string.IsNullOrEmpty(DateOfBirth.Text) || !Classes.Common.CheckRegex.Match("^\d{2}.\d{2}.\d{4}", DateOfBirth.Text))
+            {
+                MessageBox.Show("Неправильно указана дата рождения пользователя");
+                return;
+            }
+            if (string.IsNullOrEmpty(DateOfIssued.Text) || !Classes.Common.CheckRegex.Match("^\d{2}.\d{2}.\d{4}", DateOfIssued.Text))
+            {
+                MessageBox.Show("Неправильно указана дата выдачи паспорта");
+                return;
+            }
             if (EditPassports == null)
             {
                 EditPassports = new Classes.Passport();
-                MainWindow.init.Pasports.Add(EditPassports);
+                MainWindow.init.Passports.Add(EditPassports);
             }
             EditPassports.Name= Name.Text;
             EditPassports.FirstName= FirstName.Text;
