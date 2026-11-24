@@ -20,9 +20,25 @@ namespace Regex_Shapovalova
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Update(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Delete(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
